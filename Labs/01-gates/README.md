@@ -42,4 +42,4 @@
    | 1 | 1 | 1 | 1 | 0 | 0 |
 
 ## 2 to 4 Decoder
-![and_gates](Screenshot_2020-02-05_12-37-00.png)
+!2 to 4 decoder.png
