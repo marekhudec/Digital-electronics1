@@ -43,4 +43,4 @@
 
    ## 2 to 4 Decoder
    
-   ![and_gates](2 to 4 decoder.png)
+   ![and_gates](2to4decoder.png)
