@@ -41,5 +41,6 @@
    | 1 | 1 | 0 | 0 | 0 | 0 |
    | 1 | 1 | 1 | 1 | 0 | 0 |
 
-## 2 to 4 Decoder
-!2 to 4 decoder.png
+   ## 2 to 4 Decoder
+   
+   ![and_gates](2 to 4 decoder.png)
