@@ -96,7 +96,9 @@ begin
     -- Sub-block of hex_to_7seg entity
     HEX2SSEG: entity work.hex_to_7seg
         port map (
-                  -- WRITE YOUR CODE HERE
+                  hex_i => s_result;
+		  se_o => disp_seg_o;
+		-- WRITE YOUR CODE HERE
                   );
 
     -- Select display position
@@ -104,9 +106,18 @@ begin
 
 
     -- Show carry output bit on Coolrunner-II LED
-    -- WRITE YOUR CODE HERE
+    LD1 <= s_carryOut;
+-- WRITE YOUR CODE HERE
 
     -- Show two 4-bit inputs on CPLD expansion LEDs
-    -- WRITE YOUR CODE HERE
+    	LD0_CPLD <= SW0_CPLD;
+	LD1_CPLD <= SW1_CPLD;
+	LD2_CPLD <= SW2_CPLD;
+	LD3_CPLD <= SW3_CPLD;
+	LD4_CPLD <= SW4_CPLD;
+	LD5_CPLD <= SW5_CPLD;
+	LD6_CPLD <= SW6_CPLD;
+	LD7_CPLD <= SW7_CPLD;
+-- WRITE YOUR CODE HERE
 
 end architecture Behavioral;
