@@ -29,15 +29,16 @@ end entity top;
 ------------------------------------------------------------------------
 architecture Behavioral of top is
     constant c_NBIT0 : positive := 4;   -- Number of bits for Counter0
-    --- WRITE YOUR CODE HERE
+   signal s_en : std_logic;
+	signal s_count : std_logic_vector(4-1 downto 0);
 begin
 
     --------------------------------------------------------------------
     -- Sub-block of clock_enable entity
     clock_enable: entity work.clock_enable
         port map (srst_n_i => BTN0,
-						clk_i => clk_i,
-						clk_en => s_en
+		clk_i => clk_i,
+		clock_enable_o => s_en
                  );
 
 
@@ -46,9 +47,9 @@ begin
     -- Sub-block of binary_cnt entity
      binary_cnt: entity work.binary_cnt
         port map (en_i=> s_en,
-						srst_n_i => BTN0,
-						clk_i => clk_i,
-						cnt_o => s_count
+		srst_n_i => BTN0,
+		clk_i => clk_i,
+		cnt_o => s_count				
                  );
     
 
@@ -56,9 +57,9 @@ begin
     --------------------------------------------------------------------
     -- Sub-block of hex_to_7seg entity
     hex_to_7seg: entity work.hex_to_7seg
-	     port map (hex_i => s_count,
-						seg_o => segm 
-                 );
+	    port map (	hex_i => s_count,
+			seg_o => disp_seg_o 
+                 	);
 	 
 	 
     -- Select display position
