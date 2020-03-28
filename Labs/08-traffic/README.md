@@ -6,4 +6,4 @@
 ![top2](top2.png)
 
 ## Stavový diagram
-![diagram](stavovy.png)
+![diagram](stavovy_diagram.jpg)
