@@ -32,53 +32,60 @@ use ieee.std_logic_unsigned.all;
 
 entity Encoder_to_time is
 port ( enc_in_A_B: in std_logic_vector(2-1 downto 0);
-		 s_rst: in std_logic;
-		 BTN: in std_logic;
-		 time_num: out unsigned(10-1 downto 0);
-		 enable_cnt: out std_logic);
+		 srst_n_i : in  std_logic;
+		 number_o: out unsigned(2-1 downto 0)
+		);
 end Encoder_to_time;
 
 architecture Behavioral of Encoder_to_time is
-signal timing: unsigned(10-1 downto 0); 
+signal timing: unsigned(2-1 downto 0); 
 signal before: std_logic_vector(2-1 downto 0);
 
 begin
-convert: process(enc_in_A_B,s_rst)
+
+convert: process(enc_in_A_B, srst_n_i )
 begin
-	if s_rst = '1' then
-	   case enc_in_A_B is
+	if srst_n_i = '1' then  
+		case enc_in_A_B is
 		when "00"  =>
 			if before = "10" then
-				timing <= timing +1;
-			else timing <= timing -1;
-			before <= enc_in_A_B;
+			timing <= timing +1;
+			elsif before = "01" then
+			timing <= timing -1;
+			else
+			timing <= "00";
 			end if;
+			
 		when "01" =>
-		   if before <= "00" then
+		   if before = "00" then
 			timing <= timing +1;
-			else timing <= timing -1;
-			before <= enc_in_A_B;
+			elsif before = "11" then
+			timing <= timing -1;
+			else
+			timing <= "00";
 			end if;
+			
 		when "11" =>
-		   if before <= "01" then
+		   if before = "01" then
 			timing <= timing +1;
-			else timing <= timing -1;
-			before <= enc_in_A_B;
+			elsif before = "10" then
+			timing <= timing -1;
+			else timing <= "00";
 			end if;
+			
 		when "10" =>
-		   if before <= "11" then
+		   if before = "11" then
 			timing <= timing +1;
-			else timing <= timing -1;
-			before <= enc_in_A_B;
-			end if;
-		when others =>
+			elsif before = "00" then
+			timing <= timing -1;
+			else timing <= "00";
+			end if;	
+		when others => timing <= "00";
 		end case;
-		time_num <= timing;
-		if BTN = '1' then
-		enable_cnt <= '1';
-		end if;
-	else timing <= "0000000000";
+	else timing <= "00";
 	end if;
-end process;
-end Behavioral;
+end process convert;
+	before <= enc_in_A_B;
+	number_o <= timing;
+end architecture Behavioral;
 
