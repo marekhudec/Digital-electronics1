@@ -26,4 +26,4 @@ Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílč
 
 
 ### Encoder_to_time (KY-040)
- 
+Enkodér KY-040 funguje jako "digitální potenciometr". 
