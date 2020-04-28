@@ -17,8 +17,7 @@ Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílč
  ##      **Kompletní projekt**
  
  Výsledný výtvor sestává z jednotlivých bloků (modulů), které byly vytvořeny, následně propojeny a odsimulovány ke správné funkčnosti zadaného projektu.
- - **Enkodér KY-040**
+ - **Encoder_to_time (KY-040)**
  - **Clock_enable**
  - **Delay**
- - **Encoder_to_time**
  - **PWM**
