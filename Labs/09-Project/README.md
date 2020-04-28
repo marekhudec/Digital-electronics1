@@ -21,3 +21,9 @@ Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílč
  - **Clock_enable**
  - **Delay**
  - **PWM**
+ 
+ 
+
+
+### Encoder_to_time (KY-040)
+ 
