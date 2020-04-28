@@ -11,3 +11,14 @@ Tento projekt se zabývá řešením **PWM stmívače** s nastavitelnou dobou "n
 
 
 Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílčí soubory, screenshoty jednotlivých průběhů aplikace a dále odkazy na datasheete a jiné užitečné informace.
+
+
+
+ ##      **Kompletní projekt**
+ 
+ Výsledný výtvor sestává z jednotlivých bloků (modulů), které byly vytvořeny, následně propojeny a odsimulovány ke správné funkčnosti zadaného projektu.
+ - **Enkodér KY-040**
+ - **Clock_enable**
+ - **Delay**
+ - **Encoder_to_time**
+ - **PWM**
