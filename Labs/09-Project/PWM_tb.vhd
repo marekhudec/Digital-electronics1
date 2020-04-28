@@ -52,7 +52,7 @@ ARCHITECTURE behavior OF PWM_tb IS
    --Inputs
    signal rst_n_i : std_logic := '0';
    signal start_PWM : std_logic := '0';
-   signal clk_i : std_logic := '1';
+   signal clk_i : std_logic := '0';
 
  	--Outputs
    signal PWM_o : std_logic;
@@ -83,9 +83,9 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      wait for 100 us;
+      wait for 5 ms;
 		rst_n_i <= '1';
-		wait for 100 us;
+		wait for 5 ms;
 		start_PWM <= '1';
 		
 

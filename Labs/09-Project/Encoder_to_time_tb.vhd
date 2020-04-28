@@ -44,7 +44,7 @@ ARCHITECTURE behavior OF Encoder_to_time_TB IS
     PORT(
          enc_in_A_B : IN  std_logic_vector(1 downto 0);
          srst_n_i : IN  std_logic;
-         s_number : OUT  unsigned(1 downto 0)
+         number_o : OUT  unsigned(7-1 downto 0)
         );
     END COMPONENT;
     
@@ -54,7 +54,7 @@ ARCHITECTURE behavior OF Encoder_to_time_TB IS
    signal srst_n_i : std_logic := '0';
 
  	--Outputs
-   signal s_number : unsigned(1 downto 0);
+   signal number_o : unsigned(7-1 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
  
@@ -66,7 +66,7 @@ BEGIN
    uut: Encoder_to_time PORT MAP (
           enc_in_A_B => enc_in_A_B,
           srst_n_i => srst_n_i,
-          s_number => s_number
+          number_o => number_o
         );
 
    -- Clock process definitions

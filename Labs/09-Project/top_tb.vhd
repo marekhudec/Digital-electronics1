@@ -41,8 +41,8 @@ ARCHITECTURE behavior OF top_tb IS
          in_AB : IN  std_logic_vector(1 downto 0);
          BTN_enc : IN  std_logic;
          clk_i : IN  std_logic;
-         PWM_O : OUT  std_logic;
-         BTN_rst : IN  std_logic
+         LD0: OUT  std_logic;
+         BTN0:IN  std_logic
         );
     END COMPONENT;
     
@@ -51,10 +51,11 @@ ARCHITECTURE behavior OF top_tb IS
    signal in_AB : std_logic_vector(1 downto 0) := (others => '0');
    signal BTN_enc : std_logic := '0';
    signal clk_i : std_logic := '0';
-   signal BTN_rst : std_logic := '0';
+   signal BTN0 : std_logic := '0';
 
  	--Outputs
-   signal PWM_O : std_logic;
+   signal LD0 : std_logic;
+	
 
    -- Clock period definitions
    constant clk_i_period : time := 100 us;
@@ -66,8 +67,8 @@ BEGIN
           in_AB => in_AB,
           BTN_enc => BTN_enc,
           clk_i => clk_i,
-          PWM_O => PWM_O,
-          BTN_rst => BTN_rst
+          LD0 => LD0,
+          BTN0 => BTN0
         );
 
    -- Clock process definitions
@@ -83,8 +84,7 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-     BTN_rst <= '1';
-	 
+     
     wait for clk_i_period/2;
     in_AB <= "01";
     wait for clk_i_period/2;
@@ -94,20 +94,12 @@ BEGIN
 	 wait for clk_i_period/2;
 	 in_AB <= "00";
     wait for clk_i_period/2;
-    in_AB <= "01";
---	 wait for clk_i_period/2;
---    in_AB <= "01";
---    wait for clk_i_period/2;
---	 in_AB <= "11";
---	 wait for clk_i_period/2;
---	 in_AB <= "10";
---	 wait for clk_i_period/2;
---	 in_AB <= "00";
-
-	 
-	 wait for clk_i_period*2;
+    in_AB <= "01";	 
+	 wait for clk_i_period/2;
 	 BTN_enc <= '1';
-      wait;
+     wait for clk_i_period/2;
+	  BTN0 <= '1';
+	  wait;
    end process;
 
 END;
