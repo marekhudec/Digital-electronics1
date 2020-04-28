@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   12:14:07 04/21/2020
+-- Create Date:   17:24:06 04/27/2020
 -- Design Name:   
--- Module Name:   C:/ISE/Project_PWM/PWM_tb.vhd
+-- Module Name:   C:/ISE/Project_PWM/delay_tb.vhd
 -- Project Name:  Project_PWM
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: PWM
+-- VHDL Test Bench Created by ISE for module: delay
 -- 
 -- Dependencies:
 -- 
@@ -32,66 +32,69 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 USE ieee.numeric_std.ALL;
  
-ENTITY PWM_tb IS
-END PWM_tb;
+ENTITY delay_tb IS
+END delay_tb;
  
-ARCHITECTURE behavior OF PWM_tb IS 
+ARCHITECTURE behavior OF delay_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT PWM
+    COMPONENT delay
     PORT(
-         rst_n_i : IN  std_logic;
-         start_PWM : IN  std_logic;
-         clk_i : IN  std_logic;
-         PWM_o : OUT  std_logic
+         time_i : IN  unsigned(6 downto 0);
+         clk_enable_i : IN  std_logic;
+         srst_n_i : IN  std_logic;
+         start_PWM_o : OUT  std_logic;
+         BTN : IN  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
-   signal rst_n_i : std_logic := '0';
-   signal start_PWM : std_logic := '0';
-   signal clk_i : std_logic := '1';
+   signal time_i : unsigned(6 downto 0) := (others => '0');
+   signal clk_enable_i : std_logic := '0';
+   signal srst_n_i : std_logic := '0';
+   signal BTN : std_logic := '0';
 
  	--Outputs
-   signal PWM_o : std_logic;
+   signal start_PWM_o : std_logic;
 
    -- Clock period definitions
-   constant clk_i_period : time := 100 us;
+   constant clk_enable_i_period : time := 10 ms;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: PWM PORT MAP (
-          rst_n_i => rst_n_i,
-          start_PWM => start_PWM,
-          clk_i => clk_i,
-          PWM_o => PWM_o
+   uut: delay PORT MAP (
+          time_i => time_i,
+          clk_enable_i => clk_enable_i,
+          srst_n_i => srst_n_i,
+          start_PWM_o => start_PWM_o,
+          BTN => BTN
         );
 
    -- Clock process definitions
-   clk_i_process :process
+   clk_enable_i_process :process
    begin
-		clk_i <= '0';
-		wait for clk_i_period/2;
-		clk_i <= '1';
-		wait for clk_i_period/2;
+		clk_enable_i <= '0';
+		wait for clk_enable_i_period/2;
+		clk_enable_i <= '1';
+		wait for clk_enable_i_period/2;
    end process;
  
 
    -- Stimulus process
    stim_proc: process
    begin		
-      wait for 100 us;
-		rst_n_i <= '1';
-		wait for 100 us;
-		start_PWM <= '1';
-		
-
-      -- insert stimulus here 
-
-      wait;
+     wait for clk_enable_i_period/2;
+	  time_i <= "0000100";
+		wait for clk_enable_i_period;
+		BTN <='1';
+		wait for clk_enable_i_period;
+		srst_n_i <= '1';
+		 wait for clk_enable_i_period;	
+	
+		wait;
    end process;
 
 END;

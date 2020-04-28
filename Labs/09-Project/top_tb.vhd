@@ -2,15 +2,15 @@
 -- Company: 
 -- Engineer:
 --
--- Create Date:   12:14:07 04/21/2020
+-- Create Date:   21:31:44 04/25/2020
 -- Design Name:   
--- Module Name:   C:/ISE/Project_PWM/PWM_tb.vhd
+-- Module Name:   C:/ISE/Project_PWM/top_tb.vhd
 -- Project Name:  Project_PWM
 -- Target Device:  
 -- Tool versions:  
 -- Description:   
 -- 
--- VHDL Test Bench Created by ISE for module: PWM
+-- VHDL Test Bench Created by ISE for module: top
 -- 
 -- Dependencies:
 -- 
@@ -27,35 +27,34 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
- 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 USE ieee.numeric_std.ALL;
+ use ieee.std_logic_unsigned.all;
+ENTITY top_tb IS
+END top_tb;
  
-ENTITY PWM_tb IS
-END PWM_tb;
- 
-ARCHITECTURE behavior OF PWM_tb IS 
+ARCHITECTURE behavior OF top_tb IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT PWM
+    COMPONENT top
     PORT(
-         rst_n_i : IN  std_logic;
-         start_PWM : IN  std_logic;
+         in_AB : IN  std_logic_vector(1 downto 0);
+         BTN_enc : IN  std_logic;
          clk_i : IN  std_logic;
-         PWM_o : OUT  std_logic
+         PWM_O : OUT  std_logic;
+         BTN_rst : IN  std_logic
         );
     END COMPONENT;
     
 
    --Inputs
-   signal rst_n_i : std_logic := '0';
-   signal start_PWM : std_logic := '0';
-   signal clk_i : std_logic := '1';
+   signal in_AB : std_logic_vector(1 downto 0) := (others => '0');
+   signal BTN_enc : std_logic := '0';
+   signal clk_i : std_logic := '0';
+   signal BTN_rst : std_logic := '0';
 
  	--Outputs
-   signal PWM_o : std_logic;
+   signal PWM_O : std_logic;
 
    -- Clock period definitions
    constant clk_i_period : time := 100 us;
@@ -63,11 +62,12 @@ ARCHITECTURE behavior OF PWM_tb IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: PWM PORT MAP (
-          rst_n_i => rst_n_i,
-          start_PWM => start_PWM,
+   uut: top PORT MAP (
+          in_AB => in_AB,
+          BTN_enc => BTN_enc,
           clk_i => clk_i,
-          PWM_o => PWM_o
+          PWM_O => PWM_O,
+          BTN_rst => BTN_rst
         );
 
    -- Clock process definitions
@@ -83,14 +83,30 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      wait for 100 us;
-		rst_n_i <= '1';
-		wait for 100 us;
-		start_PWM <= '1';
-		
+     BTN_rst <= '1';
+	 
+    wait for clk_i_period/2;
+    in_AB <= "01";
+    wait for clk_i_period/2;
+	 in_AB <= "11";
+	 wait for clk_i_period/2;
+	 in_AB <= "10";
+	 wait for clk_i_period/2;
+	 in_AB <= "00";
+    wait for clk_i_period/2;
+    in_AB <= "01";
+--	 wait for clk_i_period/2;
+--    in_AB <= "01";
+--    wait for clk_i_period/2;
+--	 in_AB <= "11";
+--	 wait for clk_i_period/2;
+--	 in_AB <= "10";
+--	 wait for clk_i_period/2;
+--	 in_AB <= "00";
 
-      -- insert stimulus here 
-
+	 
+	 wait for clk_i_period*2;
+	 BTN_enc <= '1';
       wait;
    end process;
 

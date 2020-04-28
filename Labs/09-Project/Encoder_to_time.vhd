@@ -21,39 +21,32 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity Encoder_to_time is
-port ( enc_in_A_B: in std_logic_vector(2-1 downto 0);
-		 srst_n_i : in  std_logic;
-		 number_o: out unsigned(2-1 downto 0)
+port ( enc_in_A_B: in std_logic_vector(2-1 downto 0); -- input from encoder KY040
+		 srst_n_i: in  std_logic; 		 --synchronous reset
+		 number_o: out unsigned(7-1 downto 0) -- output value of time converted from encoder`s output pulses
 		);
 end Encoder_to_time;
 
 architecture Behavioral of Encoder_to_time is
-signal timing: unsigned(2-1 downto 0); 
+signal timing: unsigned(7-1 downto 0); 
 signal before: std_logic_vector(2-1 downto 0);
 
 begin
 
-convert: process(enc_in_A_B, srst_n_i )
+convert: process(enc_in_A_B)		
 begin
-	if srst_n_i = '1' then  
-		case enc_in_A_B is
+	if srst_n_i = '1' then  --asynchronous reset
+		case enc_in_A_B is  -- defining state of input A and B
 		when "00"  =>
-			if before = "10" then
-			timing <= timing +1;
-			elsif before = "01" then
-			timing <= timing -1;
+			if before = "10" then   -- compare with previous state
+			timing <= timing +1;			--increment
+			elsif before = "01" then -- compare with previous state
+			timing <= timing -1;     --decrement
 			else
-			timing <= "00";
+			timing <= "0000000";		--reset output
 			end if;
 			
 		when "01" =>
@@ -62,7 +55,7 @@ begin
 			elsif before = "11" then
 			timing <= timing -1;
 			else
-			timing <= "00";
+			timing <= "0000000";
 			end if;
 			
 		when "11" =>
@@ -70,7 +63,7 @@ begin
 			timing <= timing +1;
 			elsif before = "10" then
 			timing <= timing -1;
-			else timing <= "00";
+			else timing <= "0000000";
 			end if;
 			
 		when "10" =>
@@ -78,11 +71,11 @@ begin
 			timing <= timing +1;
 			elsif before = "00" then
 			timing <= timing -1;
-			else timing <= "00";
+			else timing <= "0000000";
 			end if;	
-		when others => timing <= "00";
+		when others => timing <= "0000000";
 		end case;
-	else timing <= "00";
+	else timing <= "0000000";
 	end if;
 end process convert;
 	before <= enc_in_A_B;
