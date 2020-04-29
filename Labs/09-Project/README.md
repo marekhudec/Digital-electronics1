@@ -33,17 +33,19 @@ Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílč
 
 ### Enkodér KY-040
 *Rotační enkodér s tlačítkem (modul KY-040)* jest velmi přesná pomocná jednotka, u které je, oproti potenciometru, zajištěna přesnost kroků, a sice při každém otočení "cvaknou" zoubky uvnitř tohoto enkodéru, tudíž je snadno spočítat, kolik kroků bylo provedeno. Zmínění enkodér má rozsah 20 kroků s možností uložení (pomocí tlačítka) viz [Datasheet Rotary Encoder KY-040](https://www.handsontec.com/dataspecs/module/Rotary%20Encoder.pdf) 
-Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho kroku jest 10 ms. 
+Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho kroku jest 10 ms.
+
 
 ### Encoder_to_time
 ![Encoder_to_time](Encoder_to_time.png)
 
-*Encoder_to_time* jest převodník z binární hodnoty z výstupu enkodéru KY-040 na kladné celé číslo (hodnotu). 
+*Encoder_to_time* jest převodník z binární hodnoty z výstupu enkodéru KY-040 na kladné celé číslo (hodnotu) viz [Encoder_to_time.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/Encoder_to_time.vhd) a [Encoder_to_time_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/Encoder_to_time_tb.vhd)
+
 
 ### Clock_enable
 ![Clock_enable](Clock_enable.png)
 
-*Clock_enable* jest předděličkou kmitočtu. Zajišťuje snížení frekvence řídícího (hodinového) signálu, a sice 100 krát.
+*Clock_enable* jest předděličkou kmitočtu. Zajišťuje snížení frekvence řídícího (hodinového) signálu, a sice 100 krát viz [Clock_enable.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/clock_enable.vhd)
 
 ### Delay
 ![Delay](Delay.png)
