@@ -50,7 +50,7 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 ### Delay
 ![Delay](Delay.png)
 
-*Delay* jest čítač, který zajišťuje "načasování" spuštění procesu PWM.
+*Delay* jest čítač, který zajišťuje "načasování" spuštění procesu PWM viz [Delay.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay.vhd), [Delay_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay_tb.vhd) a viz simulace [Delay_sim.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay_sim.png).
 
 ### PWM
 ![PWM](PWM.png)
