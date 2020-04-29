@@ -64,3 +64,5 @@ Jeho výstup jest připojen na LED diodu, kterou stmívá (viz [PWM.vhd](https:/
 ![Top_sim1s.png](TOP_sim1.png)  
 ![Top_sim2s.png](TOP_sim2.png)
 
+
+#### Projekt byl vytvořen v programovacím prostředí *[ISE Design, ISE WebPACK Design Software](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html)* za použití [*MIT License](https://tldrlegal.com/license/mit-license).
