@@ -20,7 +20,7 @@ Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílč
  
  
  ![PWM stmívač s nastavitelnou dobou "načasování s rotačním enkodérem KY-040 s tlačítkem](celkove_schema.png)
-     Celkové schéma zapojení: k Encoder_to_time se připojuje Enkodér KY-040. Vrstva top má vyvedení vstup pro tlačítko enkodéru, kterým se spouští časování
+     Celkové schéma zapojení: k Encoder_to_time se připojuje Enkodér KY-040. Vrstva top má vyvedení vstup pro tlačítko enkodéru, kterým se spouští časování. Funkce resetování celého bloku jest připojena na tlačítko BTN0.
  
  
  - **Enkodér KY-040**
