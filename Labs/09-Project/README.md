@@ -37,6 +37,9 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 
 ### Encoder_to_time
 ![Encoder_to_time](Encoder_to_time.png)
+
 *Encoder_to_time* jest převodník z binární hodnoty z výstupu enkodéru KY-040 na kladné celé číslo (hodnotu). 
 
+### Clock_enable
+![Clock_enable](Clock_enable.png)
 
