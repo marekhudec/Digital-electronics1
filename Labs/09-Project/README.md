@@ -43,3 +43,4 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 ### Clock_enable
 ![Clock_enable](Clock_enable.png)
 
+*Clock_enable* jest předdělička kmitočtu. Zajišťuje snížení frekvence řídícího (hodinového) signálu, a sice 100 krát.
