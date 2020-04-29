@@ -32,7 +32,7 @@ Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílč
  
 
 ### Enkodér KY-040
-*Rotační enkodér s tlačítkem (modul KY-040)* jest velmi přesná pomocná jednotka, u které jest, oproti potenciometru, zajištěna přesnost kroků, a sice při každém otočení "cvaknou" zoubky uvnitř tohoto enkodéru, tudíž je snadno spočítat, kolik kroků bylo provedeno. Zmínění enkodér má rozsah 20 kroků s možností uložení (pomocí tlačítka) viz [Datasheet Rotary Encoder KY-040](https://www.handsontec.com/dataspecs/module/Rotary%20Encoder.pdf). 
+*Rotační enkodér s tlačítkem (modul KY-040)* jest velmi přesná pomocná jednotka, u které jest, oproti potenciometru, zajištěna přesnost kroků, a sice při každém otočení "cvaknou" zoubky uvnitř tohoto enkodéru, tudíž je snadno spočítat, kolik kroků bylo provedeno. Zmínění enkodér má rozsah 20 kroků s možností uložení (pomocí tlačítka, viz [Datasheet Rotary Encoder KY-040](https://www.handsontec.com/dataspecs/module/Rotary%20Encoder.pdf)). 
 Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho kroku jest 10 ms.
 
 
@@ -50,13 +50,13 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 ### Delay
 ![Delay](Delay.png)
 
-*Delay* jest čítač, který zajišťuje "načasování" spuštění procesu PWM viz [Delay.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay.vhd), [Delay_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay_tb.vhd) a viz simulace [Delay_sim.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay_sim.png).
+*Delay* jest čítač, který zajišťuje "načasování" spuštění procesu PWM (viz [Delay.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay.vhd), [Delay_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay_tb.vhd) a viz simulace [Delay_sim.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/delay_sim.png)).
 
 ### PWM
 ![PWM](PWM.png)
 
 *PWM* jest proces, který zajišťuje postupné snižování střední hodnoty výstupního signálu (napětí) až k 0 (0V) pomocí změny šířky pulzů.
-Jeho výstup jest připojen na LED diodu, kterou stmívá viz [PWM.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM.vhd), [PWM_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_tb.vhd) a viz simulace [PWM_sim1.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_sim1.png) a [PWM_sim2.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_sim2.png)
+Jeho výstup jest připojen na LED diodu, kterou stmívá (viz [PWM.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM.vhd), [PWM_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_tb.vhd) a viz simulace [PWM_sim1.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_sim1.png) a [PWM_sim2.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_sim2.png))
 
 ## Top
 
