@@ -57,3 +57,8 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 
 *PWM* jest proces, který zajišťuje postupné snižování střední hodnoty výstupního signálu (napětí) až k 0 (0V) pomocí změny šířky pulzů.
 Jeho výstup jest připojen na LED diodu, kterou stmívá viz [PWM.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM.vhd), [PWM_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_tb.vhd) a viz simulace [PWM_sim1.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_sim1.png) a [PWM_sim2.png](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/PWM_sim2.png)
+
+## Top
+
+*Top* byl vytvořen k funkčnosti na zařízení 
+
