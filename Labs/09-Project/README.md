@@ -18,6 +18,9 @@ Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílč
  
  Výsledný výtvor sestává z jednotlivých bloků (modulů), které byly vytvořeny, následně propojeny a odsimulovány ke správné funkčnosti zadaného projektu.
  ![PWM stmívač s nastavitelnou dobou "načasování s rotačním enkodérem KY-040 s tlačítkem](schema.png)
+     Celkové schéma zapojení: k Encoder_to_time se připojuje Enkodér KY-040. Vrstva top má vyvedení vstup pro tlačítko enkodéru, kterým se spouští časování
+ 
+ 
  - **Enkodér KY-040**
  - **Encoder_to_time**
  - **Clock_enable**
