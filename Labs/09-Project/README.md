@@ -44,3 +44,8 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 ![Clock_enable](Clock_enable.png)
 
 *Clock_enable* jest předdělička kmitočtu. Zajišťuje snížení frekvence řídícího (hodinového) signálu, a sice 100 krát.
+
+### Delay
+![Delay](Delay.png)
+
+*Delay* jest čítač, který zajišťuje "načasování" spuštění procesu PWM.
