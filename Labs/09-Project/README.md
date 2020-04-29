@@ -32,7 +32,7 @@ Níže jest tento projekt rozdělen do jednotlivých částí s odkazy na dílč
  
 
 ### Enkodér KY-040
-*Rotační enkodér s tlačítkem (modul KY-040)* jest velmi přesná pomocná jednotka, u které jest, oproti potenciometru, zajištěna přesnost kroků, a sice při každém otočení "cvaknou" zoubky uvnitř tohoto enkodéru, tudíž je snadno spočítat, kolik kroků bylo provedeno. Zmínění enkodér má rozsah 20 kroků s možností uložení (pomocí tlačítka) viz [Datasheet Rotary Encoder KY-040](https://www.handsontec.com/dataspecs/module/Rotary%20Encoder.pdf) 
+*Rotační enkodér s tlačítkem (modul KY-040)* jest velmi přesná pomocná jednotka, u které jest, oproti potenciometru, zajištěna přesnost kroků, a sice při každém otočení "cvaknou" zoubky uvnitř tohoto enkodéru, tudíž je snadno spočítat, kolik kroků bylo provedeno. Zmínění enkodér má rozsah 20 kroků s možností uložení (pomocí tlačítka) viz [Datasheet Rotary Encoder KY-040](https://www.handsontec.com/dataspecs/module/Rotary%20Encoder.pdf). 
 Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho kroku jest 10 ms.
 
 
