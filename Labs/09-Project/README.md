@@ -39,7 +39,7 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 ### Encoder_to_time
 ![Encoder_to_time](Encoder_to_time.png)
 
-*Encoder_to_time* jest převodník z binární hodnoty z výstupu enkodéru KY-040 na kladné celé číslo (hodnotu) viz [Encoder_to_time.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/Encoder_to_time.vhd) a [Encoder_to_time_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/Encoder_to_time_tb.vhd)
+*Encoder_to_time* jest převodník z binární hodnoty z výstupu enkodéru KY-040 na kladné celé číslo (hodnotu, viz [Encoder_to_time.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/Encoder_to_time.vhd) a [Encoder_to_time_tb.vhd](https://github.com/marekhudec/Digital-electronics1/blob/master/Labs/09-Project/Encoder_to_time_tb.vhd)
 
 
 ### Clock_enable
