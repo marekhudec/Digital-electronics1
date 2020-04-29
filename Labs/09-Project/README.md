@@ -49,3 +49,8 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 ![Delay](Delay.png)
 
 *Delay* jest čítač, který zajišťuje "načasování" spuštění procesu PWM.
+
+### PWM
+![PWM](PWM.png)
+
+*PWM* jest proces, který zajišťuje postupné snižování střední hodnoty výstupního signálu (napětí) až k 0 (0V) pomocí změny šířky pulzů.
