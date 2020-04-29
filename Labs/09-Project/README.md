@@ -54,3 +54,4 @@ Enkodérem je nastaveno časování (inkrementace/dekrementace). Hodnota jednoho
 ![PWM](PWM.png)
 
 *PWM* jest proces, který zajišťuje postupné snižování střední hodnoty výstupního signálu (napětí) až k 0 (0V) pomocí změny šířky pulzů.
+Jeho výstup jest připojen na LED diodu, kterou stmívá.
