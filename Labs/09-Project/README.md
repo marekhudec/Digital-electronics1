@@ -60,5 +60,5 @@ Jeho výstup jest připojen na LED diodu, kterou stmívá viz [PWM.vhd](https://
 
 ## Top
 
-*Top* byl vytvořen k funkčnosti na zařízení 
+*Top* vrstva jest implementována na CoolRunner-II CPLD starter board.
 
