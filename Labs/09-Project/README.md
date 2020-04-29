@@ -31,4 +31,4 @@ Rotační enkodér s tlačítkem (modul KY-040) jest velmi přesná pomocná jed
 Enkodérem je nastaveno 
 
 ### Encoder_to_time (KY-040)
-
+![Encoder_to_time](Encoder_to_time.png)
