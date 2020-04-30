@@ -64,5 +64,10 @@ Jeho výstup jest připojen na LED diodu, kterou stmívá (viz [PWM.vhd](https:/
 ![Top_sim1s.png](TOP_sim1.png)  
 ![Top_sim2s.png](TOP_sim2.png)
 
+## Možnost nastavení parametrů
+Systém je vytvořen k plynulému stmívání LED diody ze 100% na 0%, a to pomocí PWM, které je ovládáno rotačním enkodérem KY-040. Po nastavení zvolené hodnoty a následném stisknutí tlačítka na enkodéru KY-040 dochází ke spuštění procesu, který vyústí ke ztlumení LED diody. K funkčnosti bylo potřeba vytvoření *"Encoder_to_time"* za účelem převedení binární hodnoty z výstupu KY-040 na kladné celé číslo, tudíž na potřebný formát signálu, který jest výstupem tohoto enkodéru přiveden na vstup *"Delay"* (čítače), který při každé náběžné hraně řídícího (hodinového) signálu provádí inkrementaci/dekrementaci a porovnává tuto hodnotu s hodnotou přivedenou na jeho vstup. Jakmile dojde k rovnosti porovnávaných hodnot, vyšle logickou '1' do *"PWM"*, které začne s procesem stmívání LED diody. Ke správnosti a celkové funkčnosti systému jest zapotřebí správného průběhu řídícího signálu, což je zajištěno předděličkou kmitočtu *"Clock_enable"*, která zaručuje podělení kmitočtu na zadanou hodnotu, v tomto případě dělí kmitočet 100x, tudíž na 100 Hz. Ovšem změna hodnoty dělení je jednoduše nastavitelná přímo v kódu tohoto modulu.
+
+
+
 
 #### Projekt byl vytvořen v programovacím prostředí *[ISE Design, ISE WebPACK Design Software](https://www.xilinx.com/products/design-tools/ise-design-suite/ise-webpack.html)* za použití [*MIT License*](https://tldrlegal.com/license/mit-license).
